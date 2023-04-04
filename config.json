@@ -1,0 +1,26 @@
+
+{
+    "params":
+    {
+        "local_server" : "True",
+        "local_server_uri": "mysql://root:@localhost/TechnoHub",
+        "prod_uri" :"mysql://username:password@server/db",
+        "fb_url": "https://www.facebook.com/codingthunder",
+        "twitter_url": "https://www.twitter.com/codingthunder",
+        "github_url":"https://www.github.com/codingthunder",
+        "title_name":"Reliance Digital",
+        "blog_name":"Techno Growth Hub",
+        "blog_sub_name":"A blog on technological research",
+        "recipient_mail":"mona.josephine03@gmail.com",
+        "recipient_password": "tqwkhanauhijvtmj",
+        "about_text": "Hi...My name is Monalisa.I make flask applications and intend to grow more in python web development",
+        "no_of_posts": 4,
+        "login_username" : "admin",
+        "login_password":"test@123",
+        "secret-key":"777777gggggg",
+        "uploaded_file_path":"/Users/akashmahato/Documents/blogsite_files"
+
+
+        
+    }
+}

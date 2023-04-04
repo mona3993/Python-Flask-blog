@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+{% block content %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url(' {{ url_for('static',filename='assets/img/home-bg.jpg') }} ')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Welcome!! {{params['login_username']}}</h1>
+                            <h3>Create and manage your blogs</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    You are logged in
+                    <hr>
+
+
+<h1>Basic Actions</h1> 
+<a href="/edit/0"><button class="btn btn-primary text-uppercase">Add a Blog post</button></a>   
+<hr>               
+<h1>File uploader coming....</h1>
+<form action="/uploader" method="post" enctype="multipart/form-data">
+    <input type="file" id="file1" name="file1"
+    <a href="/uploader"><button class="btn btn-primary text-uppercase">Submit</button></a>
+</form>
+<hr>                    
+<h3>Edit Your Posts:</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">sno</th>
+      <th scope="col">Title</th>
+      <th scope="col">Date</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in posts %}
+    <tr>
+      <th scope="row">{{p.sno}}</th>
+      <td>{{p.title}}</td>
+      <td>{{p.date}}</td>
+      <td><a href="/edit/{{p.sno}}"><button class="btn btn-primary text-uppercase">Edit</button></a></td>
+      <td><a href="/delete/{{p.sno}}"><button class="btn btn-primary text-uppercase">Delete</button></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+                   <!--{% for post in posts %}
+                    
+                    <div class="post-preview">
+                        <a href="/post/{{post.slug}}">
+                            <h2 class="post-title">{{post.title}}</h2>
+                            <h3 class="post-subtitle">{{post.tagline}}</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">Admin</a>
+                            on {{post.date}}
+                        </p>
+                        {{post.content[0:20]}}....
+
+                    {% endfor %}-->
+
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="post.html"><h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h2></a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">Start Bootstrap</a>
+                            on September 18, 2022
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="post.html">
+                            <h2 class="post-title">Science has not yet mastered prophecy</h2>
+                            <h3 class="post-subtitle">We predict too much for the next year and yet far too little for the next ten.</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">Start Bootstrap</a>
+                            on August 24, 2022
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="post.html">
+                            <h2 class="post-title">Failure is not an option</h2>
+                            <h3 class="post-subtitle">Many say exploration is part of our destiny, but it’s actually our duty to future generations.</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">{{params["blog_name"]}}</a>
+                            on July 8, 2022
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Pager-->
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
